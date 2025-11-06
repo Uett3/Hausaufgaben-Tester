@@ -2,8 +2,7 @@ package u3h2;
 
 import java.util.Random;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 public class u3h2 {
 
     //Übung 3 Aufgabe 2
@@ -46,7 +45,7 @@ public class u3h2 {
  static void inputGen(){
      Random rand = new Random();
      for (int i = 0; i < testläufe; i++){
-         input_Jahr[i] = rand.nextInt(90000);
+         input_Jahr[i] = rand.nextInt(9000000);
          input_Schalt[i] = rand.nextBoolean();
      }
     }
@@ -92,14 +91,17 @@ public class u3h2 {
         int jahr = in_Jahr;
         boolean schalt = in_Schalt;
 
-        int a = 4;
-        int b = 400;
-        int c = 100;
-
-        // Zu prüfen: jahr sollte durch 4 und durch 400 teilbar sein aber nicht durch 100
-
-        if (jahr % a == 0 && jahr % c != 0 || jahr % b == 0) {schalt = true;} else {schalt = false;}
-
+        //Wenn das Jahr durch 4 teilbar:
+        if(jahr%4 == 0) {
+            schalt = true;
+            //Wenn das Jahr durch 100 teilbar ist UND nicht durch 400 teilbar ist:
+            if (jahr%100 == 0 && jahr%400 != 0) {
+                schalt = false;
+            }
+            //Andernfalls, wenn das Jahr nicht durch 4 teilbar ist:
+        } else {
+            schalt = false;
+        }
 
         return schalt;
     }
