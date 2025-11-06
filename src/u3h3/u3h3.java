@@ -52,7 +52,8 @@ public class u3h3 {
         Random rand = new Random();
         for (int i = 0; i < testläufe; i++){
             input_max[i] = rand.nextInt(9000000);
-            input_fix[i] = rand.nextInt(9000000);
+
+            input_fix[i] = rand.nextInt(input_max[i] + 1); // fix should not be greater than max
             input_wartend[i] = rand.nextInt(9000000);
             input_istVoll[i] = rand.nextBoolean();
 
