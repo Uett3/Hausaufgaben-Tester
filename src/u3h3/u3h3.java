@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class u3h3 {
 
-    static int testläufe = 10;
+    static int testläufe = 1_0_000_000;
     static int[] input_max = new int[testläufe];
     static int[] input_fix = new int[testläufe];
     static int[] input_wartend = new int[testläufe];
